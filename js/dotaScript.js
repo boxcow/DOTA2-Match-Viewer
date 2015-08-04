@@ -22,7 +22,9 @@ function ajax_get_json(){
     var num = 0;
     
     
-    
+    function kFormat(num){
+        return num > (999) ? (num/1000).toFixed(1) + 'k' : num;
+    }
     
     
     hr.open("GET", "result.json", true);
@@ -77,7 +79,7 @@ function ajax_get_json(){
             pXPM.innerHTML = "XP Per Min";
             pGPM.innerHTML = "Gold Per Min";
             pHD.innerHTML = "Hero Damage";
-            pTD.innerHTML = "Turret Damage";
+            pTD.innerHTML = "Tower Damage";
             for(var i = 0; i < 5; i++){
                 var row = table.insertRow(-1);
                 row.className = "text-center";
@@ -107,8 +109,8 @@ function ajax_get_json(){
                 pDN.innerHTML = data.result.players[i].denies;
                 pXPM.innerHTML = data.result.players[i].xp_per_min;
                 pGPM.innerHTML = data.result.players[i].gold_per_min;
-                pHD.innerHTML = data.result.players[i].hero_damage;
-                pTD.innerHTML = data.result.players[i].tower_damage;
+                pHD.innerHTML = kFormat(data.result.players[i].hero_damage);
+                pTD.innerHTML = kFormat(data.result.players[i].tower_damage);
             }
             
             //create radiant table
@@ -144,7 +146,7 @@ function ajax_get_json(){
             pXPM.innerHTML = "XP Per Min";
             pGPM.innerHTML = "Gold Per Min";
             pHD.innerHTML = "Hero Damage";
-            pTD.innerHTML = "Turret Damage";
+            pTD.innerHTML = "Tower Damage";
             for(var i = 5; i < 10; i++){
                 
                 var row = table.insertRow(-1);
@@ -175,8 +177,8 @@ function ajax_get_json(){
                 pDN.innerHTML = data.result.players[i].denies;
                 pXPM.innerHTML = data.result.players[i].xp_per_min;
                 pGPM.innerHTML = data.result.players[i].gold_per_min;
-                pHD.innerHTML = data.result.players[i].hero_damage;
-                pTD.innerHTML = data.result.players[i].tower_damage;
+                pHD.innerHTML = kFormat(data.result.players[i].hero_damage);
+                pTD.innerHTML = kFormat(data.result.players[i].tower_damage);
             }
             
             
