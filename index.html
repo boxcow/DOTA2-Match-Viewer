@@ -1,9 +1,35 @@
+<!DOCTYPE html>
 <html>
-	<head>
-	</head>
+<head>
+    <title>DOTA2 Match Viewer</title>
+    <link rel="shortcut icon" href="img/Favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
+    <script src="js/dotaScript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"</script>
+    <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+</head>
+    
+    
+<body>
+    
+    <div class="container-fluid">
+        <h1>Jojo's DOTA2 Match Viewer</h1>
+        
+        <div class="container">
+            
+            <h2 id="radiantStatus" class="text-center shadow"></h2>
+            <h3 id="matchID" class="text-center"></h3><hr/>
 
-	<body>
-	<p>Hello, World</p>
-	</body>
+            <h3 class="radiantHeader">The Radiant</h3>
+            <table id="radiantTable" class="color"></table>
 
+            <h3 class="direHeader">The Dire</h3>
+            <table id="direTable"></table>
+        
+        </div>
+    
+    </div>
+    <script>ajax_get_json();</script>
+</body>
 </html>
