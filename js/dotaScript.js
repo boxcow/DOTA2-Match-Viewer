@@ -1,5 +1,5 @@
 function ajax_get_json(){
-	var results = document.getElementById("results");
+    var matchID = document.getElementById("matchID");
     var heroid = document.getElementById("heroid");
     var pKills = document.getElementById("pKills");
     var pLevel = document.getElementById("pLevel");
@@ -20,6 +20,7 @@ function ajax_get_json(){
     var heroData;
     var data;
     var num = 0;
+    
     
     function returnName(heroID){
                 for (var i = 0; i < heroData.result.heroes.length; i++){
@@ -101,7 +102,7 @@ function ajax_get_json(){
             pGPM.innerHTML = data.result.players[i].gold_per_min;
             pHD.innerHTML = kFormat(data.result.players[i].hero_damage);
             pTD.innerHTML = kFormat(data.result.players[i].tower_damage);
-            }
+        }
     }
     
     
@@ -123,6 +124,8 @@ function ajax_get_json(){
                 radiantStatus.style.color = "red";
                 radiantStatus.innerHTML += "DIRE VICTORY";
             }
+            
+            matchID.innerHTML = "Match ID: " + data.result.match_id;
             
             //create radiant table
             createTable("radiantTable", 0, 5);
